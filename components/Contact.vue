@@ -48,9 +48,6 @@ textarea {
   border: 1px solid #ccc;
   border-radius: 10px;
   margin-bottom: 5px;
-}
-input[type='text'],
-textarea {
   width: 100%;
   max-width: 480px;
   resize: none;
@@ -59,11 +56,11 @@ input[type='submit'] {
   cursor: pointer;
   padding: 10px 16px;
   transition: background 0.3s;
+  width: initial;
+  max-width: initial;
 }
-input[type='submit']:hover,
-input[type='submit']:focus,
-input[type='text']:hover,
-input[type='text']:focus,
+input:hover,
+input:focus,
 textarea:hover,
 textarea:focus {
   background: rgba(255, 255, 255, 0.2);
