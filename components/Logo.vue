@@ -1,35 +1,58 @@
 <template>
-  <svg
-    class="NuxtLogo"
-    width="245"
-    height="180"
-    viewBox="0 0 452 342"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M139 330l-1-2c-2-4-2-8-1-13H29L189 31l67 121 22-16-67-121c-1-2-9-14-22-14-6 0-15 2-22 15L5 303c-1 3-8 16-2 27 4 6 10 12 24 12h136c-14 0-21-6-24-12z"
-      fill="#00C58E"
-    />
-    <path
-      d="M447 304L317 70c-2-2-9-15-22-15-6 0-15 3-22 15l-17 28v54l39-67 129 230h-49a23 23 0 0 1-2 14l-1 1c-6 11-21 12-23 12h76c3 0 17-1 24-12 3-5 5-14-2-26z"
-      fill="#108775"
-    />
-    <path
-      d="M376 330v-1l1-2c1-4 2-8 1-12l-4-12-102-178-15-27h-1l-15 27-102 178-4 12a24 24 0 0 0 2 15c4 6 10 12 24 12h190c3 0 18-1 25-12zM256 152l93 163H163l93-163z"
-      fill="#2F495E"
-    />
-  </svg>
+  <div class="logo">
+    <div
+      id="logo"
+      data-tilt
+      data-tilt-full-page-listening
+      data-tilt-speed="500"
+      data-tilt-perspective="2000"
+    ></div>
+  </div>
 </template>
 
-<style>
-.NuxtLogo {
-  animation: 1s appear;
-  margin: auto;
-}
+<script>
+export default { name: 'Logo' }
+</script>
 
-@keyframes appear {
-  0% {
-    opacity: 0;
+<style>
+.logo {
+  position: absolute;
+  z-index: -2;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 50%
+  );
+  -webkit-transition: background 3s;
+  -moz-transition: background 3s;
+  -ms-transition: background 3s;
+  -o-transition: background 3s;
+  transition: background 3s;
+}
+#logo {
+  position: absolute;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-image: url(../assets/dck-design_new_logo.svg);
+  background-repeat: no-repeat;
+  background-size: min(65vh, 65vw);
+  background-position: center center;
+  -webkit-transition: background 1s;
+  -moz-transition: background 1s;
+  -ms-transition: background 1s;
+  -o-transition: background 1s;
+  transition: background 1s;
+}
+@media screen and (max-width: 640px) {
+  #logo {
+    background-size: min(75vh, 75vw);
   }
 }
 </style>

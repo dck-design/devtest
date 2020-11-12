@@ -1,21 +1,34 @@
 <template>
-  <div class="container">
-    <section class="home">
+  <div class="contentContainer">
+    <section id="about" class="slides">
       <article>
-        <h1>welcome to dck-design</h1>
-        <h2>sub-title</h2>
-        Duis eget mi eu mauris venenatis suscipit id sit amet mi. Nunc faucibus
-        ac diam quis egestas. Curabitur id elit odio. Sed pharetra suscipit
-        malesuada. Integer nec libero eu ipsum placerat efficitur vitae ornare
-        est. Morbi venenatis volutpat nunc, ut volutpat odio porttitor
-        venenatis. In dapibus sem velit, nec ultricies eros bibendum eu.
+        <div class="slideText">
+          dck-design offers front-end ui development services. <br />
+          our specialization in animated ui will make your website interactive,
+          visually attractive, and fun site.
+        </div>
+      </article>
+    </section>
+    <section id="projects" class="slides">
+      <article class="full-stretch">
+        <Projects />
+      </article>
+    </section>
+    <section id="contact" class="slides">
+      <article>
+        <div class="slideText">
+          <Contact />
+        </div>
       </article>
     </section>
   </div>
 </template>
 
 <script>
+import Projects from '@/components/Projects'
+import Contact from '@/components/Contact'
 export default {
+  components: { Projects, Contact },
   head() {
     return {
       title: '| dck-design |',
@@ -26,23 +39,53 @@ export default {
           content: 'home of dck-design',
         },
       ],
-      script: [
-        {
-          src: '/js/faviconAnimator.js',
-        },
-      ],
     }
   },
 }
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
+<style scoped>
+h1 {
+  font-size: 3rem;
+}
+.slides {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  width: 100vw;
+  height: 100vh;
+}
+.slides article {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  max-width: 800px;
+  max-height: 80vh;
+  border: 1px solid rgba(0, 0, 0, 0.01);
+}
+.full-stretch {
+  height: auto !important;
+  max-width: 100vw !important;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.slideText {
+  position: absolute;
+  max-width: 480px;
+  bottom: 5vh;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+@media screen and (max-width: 768px) {
+  .slides article {
+    max-width: 90vw;
+    max-height: 90vh;
+  }
+  .full-stretch {
+    max-height: 100vh !important;
+  }
 }
 </style>
